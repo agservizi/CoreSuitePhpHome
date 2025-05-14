@@ -27,8 +27,7 @@ $pageDescription = "Gestisci in modo efficiente i contratti telefonici, luce e g
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
       <!-- TailwindCSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="/assets/css/components.css" rel="stylesheet">
-    <script>
+    <link href="/assets/css/components.css" rel="stylesheet">    <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
@@ -59,6 +58,38 @@ $pageDescription = "Gestisci in modo efficiente i contratti telefonici, luce e g
                             900: '#4c1d95',
                         },
                     },
+                    animation: {
+                        'shimmer': 'shimmer 3s linear infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'shine': 'shine 3s ease-in-out infinite',
+                        'slide-up': 'slide-up 0.5s ease-out',
+                        'rotate-slow': 'rotate 8s linear infinite',
+                    },
+                    keyframes: {
+                        shimmer: {
+                            '0%': { backgroundPosition: '200% 0' },
+                            '100%': { backgroundPosition: '-200% 0' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        shine: {
+                            '0%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(100%)' }
+                        },
+                        'slide-up': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(20px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            }
+                        }
+                    }
                 },
                 fontFamily: {
                     'sans': ['Source Sans Pro', 'ui-sans-serif', 'system-ui'],
@@ -66,6 +97,57 @@ $pageDescription = "Gestisci in modo efficiente i contratti telefonici, luce e g
             }
         }
     </script>
+    <style>
+        [data-animate] {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+        [data-animate].animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .btn-primary-gradient {
+            background-size: 200% auto;
+            transition: all 0.3s ease;
+        }
+        .btn-primary-gradient:hover {
+            background-position: right center;
+        }
+
+        .card-feature::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            transition: 0.5s;
+        }
+        
+        .card-feature:hover::before {
+            left: 100%;
+        }
+
+        .dynamic-gradient {
+            background: linear-gradient(-45deg, #0ea5e9, #7c3aed, #0284c7, #6d28d9);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
 </head>
 <body class="dark-transition bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white">
     <!-- Preloader -->
@@ -106,22 +188,19 @@ $pageDescription = "Gestisci in modo efficiente i contratti telefonici, luce e g
                 <a href="https://app.coresuite.it/login.php" class="block px-4 py-2 text-sm text-primary-600 dark:text-primary-400 font-semibold">Accedi</a>
             </div>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center">
-        <div class="absolute inset-0 dynamic-gradient opacity-90"></div>
+    </nav>    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center overflow-hidden">
+        <div class="absolute inset-0 dynamic-gradient opacity-90" data-parallax="10"></div>
         <div class="container mx-auto px-4 py-20 relative z-10">
             <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="text-white">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                <div class="text-white">                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight" data-animate>
                         La Soluzione Definitiva per la Gestione dei Tuoi Contratti
                     </h1>
-                    <p class="text-xl mb-8 opacity-90">
+                    <p class="text-xl mb-8 opacity-90" data-animate style="transition-delay: 200ms;">
                         Gestisci in modo intelligente e integrato i tuoi contratti telefonici, luce e gas. 
                         Tutto in un'unica piattaforma potente e intuitiva.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="flex flex-col sm:flex-row gap-4" data-animate style="transition-delay: 400ms;">
                         <a href="https://app.coresuite.it/login.php" class="btn-primary-gradient">
                             <i class="fas fa-sign-in-alt mr-2"></i>
                             Accedi Ora
@@ -144,9 +223,8 @@ $pageDescription = "Gestisci in modo efficiente i contratti telefonici, luce e g
     <section id="features" class="py-20">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Funzionalità Principali</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Feature 1 -->
-                <div class="card-feature group">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">                <!-- Feature 1 -->
+                <div class="card-feature group" data-animate style="transition-delay: 0ms;">
                     <div class="icon-circle bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 group-hover:bg-primary-600 group-hover:text-white">
                         <i class="fas fa-file-contract"></i>
                     </div>
@@ -157,7 +235,7 @@ $pageDescription = "Gestisci in modo efficiente i contratti telefonici, luce e g
                 </div>
 
                 <!-- Feature 2 -->
-                <div class="card-feature group">
+                <div class="card-feature group" data-animate style="transition-delay: 200ms;">
                     <div class="icon-circle bg-secondary-100 dark:bg-secondary-900 text-secondary-600 dark:text-secondary-400 group-hover:bg-secondary-600 group-hover:text-white">
                         <i class="fas fa-magic"></i>
                     </div>
@@ -168,7 +246,7 @@ $pageDescription = "Gestisci in modo efficiente i contratti telefonici, luce e g
                 </div>
 
                 <!-- Feature 3 -->
-                <div class="card-feature group">
+                <div class="card-feature group" data-animate style="transition-delay: 400ms;">
                     <div class="icon-circle bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-400 group-hover:bg-green-600 group-hover:text-white">
                         <i class="fas fa-chart-line"></i>
                     </div>
@@ -179,7 +257,7 @@ $pageDescription = "Gestisci in modo efficiente i contratti telefonici, luce e g
                 </div>
 
                 <!-- Feature 4 -->
-                <div class="card-feature group">
+                <div class="card-feature group" data-animate style="transition-delay: 600ms;">
                     <div class="icon-circle bg-yellow-100 dark:bg-yellow-900 text-yellow-600 dark:text-yellow-400 group-hover:bg-yellow-600 group-hover:text-white">
                         <i class="fas fa-shield-alt"></i>
                     </div>
@@ -199,12 +277,11 @@ $pageDescription = "Gestisci in modo efficiente i contratti telefonici, luce e g
             <p class="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
                 CoreSuite ottimizza la gestione dei contratti per i principali gestori di telefonia, luce e gas in Italia.
             </p>
-            
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-12 items-center justify-items-center">
-                <img src="/assets/images/fastweb-logo.png" alt="Fastweb" class="provider-logo">
-                <img src="/assets/images/enel-logo.png" alt="Enel Energia" class="provider-logo">
-                <img src="/assets/images/fastweb-energia-logo.png" alt="Fastweb Energia" class="provider-logo">
-                <img src="/assets/images/a2a-logo.png" alt="A2A Energia" class="provider-logo">
+              <div class="grid grid-cols-2 md:grid-cols-3 gap-12 items-center justify-items-center">
+                <img src="/assets/images/fastweb-logo.png" alt="Fastweb" class="h-8 max-w-[100px] object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 transform hover:scale-110">
+                <img src="/assets/images/enel-logo.png" alt="Enel Energia" class="h-8 max-w-[100px] object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 transform hover:scale-110">
+                <img src="/assets/images/fastweb-energia-logo.png" alt="Fastweb Energia" class="h-8 max-w-[100px] object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 transform hover:scale-110">
+                <img src="/assets/images/a2a-logo.png" alt="A2A Energia" class="h-8 max-w-[100px] object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 transform hover:scale-110">
             </div>
         </div>
     </section>
@@ -316,9 +393,8 @@ $pageDescription = "Gestisci in modo efficiente i contratti telefonici, luce e g
                 <p>&copy; <?php echo date('Y'); ?> CoreSuite. Tutti i diritti riservati.</p>
             </div>
         </div>
-    </footer>
-
-    <!-- Theme script -->
+    </footer>    <!-- Scripts -->
     <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/animations.js"></script>
 </body>
 </html>

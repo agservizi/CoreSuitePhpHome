@@ -1,14 +1,23 @@
 @layer components {
     .btn-primary-gradient {
-        @apply bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 text-white font-semibold py-3 px-6 rounded-lg transform transition-all duration-300 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+        @apply bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-semibold py-3 px-6 rounded-lg transform transition-all duration-300 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+        background-size: 200% auto;
+        animation: shimmer 3s linear infinite;
     }
 
     .btn-outline {
-        @apply border-2 border-white text-white font-semibold py-3 px-6 rounded-lg transform transition-all duration-300 hover:bg-white/10 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2;
+        @apply border-2 border-white text-white font-semibold py-3 px-6 rounded-lg transform transition-all duration-300 hover:bg-white/10 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 relative overflow-hidden;
+    }
+    
+    .btn-outline::after {
+        content: '';
+        @apply absolute inset-0 bg-white/20 transform -translate-x-full;
+        animation: buttonShine 3s ease-in-out infinite;
     }
 
     .card-feature {
-        @apply bg-white dark:bg-gray-800 rounded-xl p-6 shadow-xl hover:shadow-2xl transform transition-all duration-300 hover:-translate-y-2;
+        @apply bg-white dark:bg-gray-800 rounded-xl p-6 shadow-xl transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl relative overflow-hidden;
+        animation: cardPulse 6s ease-in-out infinite;
     }
 
     .icon-circle {
@@ -17,10 +26,8 @@
 
     .testimonial-card {
         @apply bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl;
-    }
-
-    .provider-logo {
-        @apply h-16 object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 transform hover:scale-110;
+    }    .provider-logo {
+        @apply h-12 max-w-[120px] object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 transform hover:scale-110;
     }
 
     .nav-link {
