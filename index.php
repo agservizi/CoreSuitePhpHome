@@ -23,7 +23,7 @@ $current_year = date('Y');
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="https://coresuite.it/">
                 <img src="assets/images/logo.png" alt="CoreSuite Logo" height="40">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
