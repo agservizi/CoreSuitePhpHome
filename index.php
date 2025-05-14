@@ -192,11 +192,14 @@ $pageDescription = "Gestisci in modo efficiente i contratti telefonici, luce e g
     <section class="relative min-h-screen flex items-center overflow-hidden">
         <div class="absolute inset-0 dynamic-gradient opacity-90" data-parallax="10"></div>
         <div class="container mx-auto px-4 py-20 relative z-10">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="text-white">                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight" data-animate>
+            <div class="grid md:grid-cols-2 gap-12 items-center">                <div class="text-white">
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-4 text-primary-200" data-animate>
+                        Benvenuto in CoreSuite
+                    </h2>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-primary-200" data-animate style="transition-delay: 100ms;">
                         La Soluzione Definitiva per la Gestione dei Tuoi Contratti
                     </h1>
-                    <p class="text-xl mb-8 opacity-90" data-animate style="transition-delay: 200ms;">
+                    <p class="text-xl mb-8 opacity-90 text-primary-100" data-animate style="transition-delay: 200ms;">
                         Gestisci in modo intelligente e integrato i tuoi contratti telefonici, luce e gas. 
                         Tutto in un'unica piattaforma potente e intuitiva.
                     </p>
@@ -217,55 +220,141 @@ $pageDescription = "Gestisci in modo efficiente i contratti telefonici, luce e g
             </div>
         </div>
         <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 dark:from-gray-900 to-transparent"></div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="py-20">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Funzionalità Principali</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">                <!-- Feature 1 -->
-                <div class="card-feature group" data-animate style="transition-delay: 0ms;">
-                    <div class="icon-circle bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 group-hover:bg-primary-600 group-hover:text-white">
-                        <i class="fas fa-file-contract"></i>
+    </section>    <!-- Features Section -->
+    <section id="features" class="py-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary-50/30 to-secondary-50/30 dark:from-primary-900/30 dark:to-secondary-900/30"></div>
+        <div class="container mx-auto px-4 relative">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+                    Funzionalità Principali
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400">
+                    Scopri come CoreSuite rivoluziona la gestione dei contratti con strumenti all'avanguardia
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 relative">
+                <!-- Feature 1 -->
+                <div class="group relative" data-animate style="transition-delay: 0ms;">
+                    <div class="relative p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-r from-primary-600/5 to-secondary-600/5 dark:from-primary-600/10 dark:to-secondary-600/10 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+                        <div class="relative flex items-start">
+                            <div class="flex-shrink-0 mr-6">
+                                <div class="w-16 h-16 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-2xl text-primary-600 dark:text-primary-400 transition-colors duration-300 group-hover:bg-primary-600 group-hover:text-white">
+                                    <i class="fas fa-file-contract"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Gestione Contratti</h3>
+                                <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                    Telefonici, Luce e Gas in un'unica piattaforma integrata con gestione semplificata e automatizzata.
+                                </p>
+                                <ul class="space-y-2">
+                                    <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
+                                        <i class="fas fa-check text-primary-600 mr-2"></i>
+                                        Gestione multi-contratto
+                                    </li>
+                                    <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
+                                        <i class="fas fa-check text-primary-600 mr-2"></i>
+                                        Archiviazione automatica
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Gestione Contratti</h3>
-                    <p class="text-gray-600 dark:text-gray-400">
-                        Telefonici, Luce e Gas in un'unica piattaforma integrata.
-                    </p>
                 </div>
 
                 <!-- Feature 2 -->
-                <div class="card-feature group" data-animate style="transition-delay: 200ms;">
-                    <div class="icon-circle bg-secondary-100 dark:bg-secondary-900 text-secondary-600 dark:text-secondary-400 group-hover:bg-secondary-600 group-hover:text-white">
-                        <i class="fas fa-magic"></i>
+                <div class="group relative" data-animate style="transition-delay: 200ms;">
+                    <div class="relative p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-r from-secondary-600/5 to-primary-600/5 dark:from-secondary-600/10 dark:to-primary-600/10 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+                        <div class="relative flex items-start">
+                            <div class="flex-shrink-0 mr-6">
+                                <div class="w-16 h-16 rounded-xl bg-secondary-100 dark:bg-secondary-900/50 flex items-center justify-center text-2xl text-secondary-600 dark:text-secondary-400 transition-colors duration-300 group-hover:bg-secondary-600 group-hover:text-white">
+                                    <i class="fas fa-magic"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Autocompletamento Dati</h3>
+                                <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                    Sistema intelligente che riconosce e completa automaticamente i dati dei clienti esistenti.
+                                </p>
+                                <ul class="space-y-2">
+                                    <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
+                                        <i class="fas fa-check text-secondary-600 mr-2"></i>
+                                        Riconoscimento automatico
+                                    </li>
+                                    <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
+                                        <i class="fas fa-check text-secondary-600 mr-2"></i>
+                                        Validazione in tempo reale
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Autocompletamento Dati</h3>
-                    <p class="text-gray-600 dark:text-gray-400">
-                        Riconosce automaticamente i clienti esistenti.
-                    </p>
                 </div>
 
                 <!-- Feature 3 -->
-                <div class="card-feature group" data-animate style="transition-delay: 400ms;">
-                    <div class="icon-circle bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-400 group-hover:bg-green-600 group-hover:text-white">
-                        <i class="fas fa-chart-line"></i>
+                <div class="group relative" data-animate style="transition-delay: 400ms;">
+                    <div class="relative p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-r from-green-600/5 to-primary-600/5 dark:from-green-600/10 dark:to-primary-600/10 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+                        <div class="relative flex items-start">
+                            <div class="flex-shrink-0 mr-6">
+                                <div class="w-16 h-16 rounded-xl bg-green-100 dark:bg-green-900/50 flex items-center justify-center text-2xl text-green-600 dark:text-green-400 transition-colors duration-300 group-hover:bg-green-600 group-hover:text-white">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Dashboard Interattiva</h3>
+                                <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                    Visualizza e analizza i dati in tempo reale con grafici interattivi e report dettagliati.
+                                </p>
+                                <ul class="space-y-2">
+                                    <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
+                                        <i class="fas fa-check text-green-600 mr-2"></i>
+                                        Grafici personalizzabili
+                                    </li>
+                                    <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
+                                        <i class="fas fa-check text-green-600 mr-2"></i>
+                                        Report automatici
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Dashboard Interattiva</h3>
-                    <p class="text-gray-600 dark:text-gray-400">
-                        Grafici e statistiche in tempo reale.
-                    </p>
                 </div>
 
                 <!-- Feature 4 -->
-                <div class="card-feature group" data-animate style="transition-delay: 600ms;">
-                    <div class="icon-circle bg-yellow-100 dark:bg-yellow-900 text-yellow-600 dark:text-yellow-400 group-hover:bg-yellow-600 group-hover:text-white">
-                        <i class="fas fa-shield-alt"></i>
+                <div class="group relative" data-animate style="transition-delay: 600ms;">
+                    <div class="relative p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-r from-yellow-600/5 to-secondary-600/5 dark:from-yellow-600/10 dark:to-secondary-600/10 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+                        <div class="relative flex items-start">
+                            <div class="flex-shrink-0 mr-6">
+                                <div class="w-16 h-16 rounded-xl bg-yellow-100 dark:bg-yellow-900/50 flex items-center justify-center text-2xl text-yellow-600 dark:text-yellow-400 transition-colors duration-300 group-hover:bg-yellow-600 group-hover:text-white">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Sicurezza Avanzata</h3>
+                                <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                    Protezione completa dei dati con autenticazione multi-fattore e gestione ruoli avanzata.
+                                </p>
+                                <ul class="space-y-2">
+                                    <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
+                                        <i class="fas fa-check text-yellow-600 mr-2"></i>
+                                        Autenticazione MFA
+                                    </li>
+                                    <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
+                                        <i class="fas fa-check text-yellow-600 mr-2"></i>
+                                        Controllo accessi granulare
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Sicurezza Avanzata</h3>
-                    <p class="text-gray-600 dark:text-gray-400">
-                        Accesso con MFA e ruoli differenziati.
-                    </p>
                 </div>
+            </div>
+        </div>
             </div>
         </div>
     </section>
