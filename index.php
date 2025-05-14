@@ -36,21 +36,18 @@ $current_year = date('Y');
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <!-- Left navbar links -->
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#funzionalita" data-scroll>
-                                <i class="fas fa-cube nav-icon"></i>
+                        <li class="nav-item">                            <a class="nav-link" href="#funzionalita" data-scroll>
+                                <span class="nav-icon"><i class="fas fa-cube"></i></span>
                                 <p>Funzionalità</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#gestori" data-scroll>
-                                <i class="fas fa-building nav-icon"></i>
+                        <li class="nav-item">                            <a class="nav-link" href="#gestori" data-scroll>
+                                <span class="nav-icon"><i class="fas fa-building"></i></span>
                                 <p>Gestori</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#vantaggi" data-scroll>
-                                <i class="fas fa-star nav-icon"></i>
+                        <li class="nav-item">                            <a class="nav-link" href="#vantaggi" data-scroll>
+                                <span class="nav-icon"><i class="fas fa-star"></i></span>
                                 <p>Vantaggi</p>
                             </a>
                         </li>
