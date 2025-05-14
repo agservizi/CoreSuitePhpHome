@@ -1,830 +1,324 @@
-<?php 
-$current_year = date('Y');
+<?php
+// Impostazioni SEO
+$pageTitle = "CoreSuite - La Soluzione Definitiva per la Gestione dei Tuoi Contratti";
+$pageDescription = "Gestisci in modo efficiente i contratti telefonici, luce e gas con CoreSuite. Piattaforma all-in-one con autocompletamento dati e dashboard interattiva.";
 ?>
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CoreSuite - La soluzione completa per la gestione dei contratti telefonici, luce e gas">
-    <meta name="keywords" content="gestione contratti, contratti telefonici, contratti luce, contratti gas, dashboard interattiva, automazione">
-    <title>CoreSuite - Gestione Contratti Semplificata</title>
-    <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <title><?php echo $pageTitle; ?></title>
+    <meta name="description" content="<?php echo $pageDescription; ?>">
+    
+    <!-- Meta tags SEO -->
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="<?php echo $pageTitle; ?>">
+    <meta property="og:description" content="<?php echo $pageDescription; ?>">
+    <meta property="og:image" content="/assets/images/logo.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- AdminLTE -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
-    <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="assets/css/style.css" rel="stylesheet">
-</head>
-<body class="layout-top-nav">
-    <div class="wrapper">
-        <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand-lg navbar-light navbar-white sticky-top">
-            <div class="container">
-                <a href="https://coresuite.it/" class="navbar-brand">
-                    <img src="assets/images/logo.png" alt="CoreSuite Logo" class="brand-image" height="32">
-                </a>
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <!-- Left navbar links -->
-                    <ul class="navbar-nav">
-                        <li class="nav-item">                            <a class="nav-link" href="#funzionalita" data-scroll>
-                                <span class="nav-icon"><i class="fas fa-cube"></i></span>
-                                <p>Funzionalità</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">                            <a class="nav-link" href="#gestori" data-scroll>
-                                <span class="nav-icon"><i class="fas fa-building"></i></span>
-                                <p>Gestori</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">                            <a class="nav-link" href="#vantaggi" data-scroll>
-                                <span class="nav-icon"><i class="fas fa-star"></i></span>
-                                <p>Vantaggi</p>
-                            </a>
-                        </li>
-                    </ul>
-
-                    <!-- Right navbar links -->
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="https://app.coresuite.it/login.php" class="btn btn-primary">
-                                <i class="fas fa-sign-in-alt mr-2"></i> Accedi
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Content Wrapper -->
-        <div class="content-wrapper bg-white">
-            <!-- Hero Section -->
-            <div class="hero-section position-relative overflow-hidden">
-                <!-- Video Background -->
-                <div class="video-background">
-                    <div class="video-foreground">
-                        <div class="overlay"></div>
-                        <video autoplay muted loop playsinline id="heroVideo">
-                            <source src="assets/videos/abstract-bg.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                </div>
-
-                <!-- Hero Content -->
-                <div class="content-header bg-transparent text-white py-7 position-relative">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-lg-6" data-aos="fade-right">
-                                <div class="hero-content">
-                                    <h1 class="display-4 font-weight-bold mb-4 text-shadow">
-                                        La Soluzione Definitiva per la Gestione dei Contratti
-                                    </h1>
-                                    <p class="lead mb-4 text-shadow">
-                                        Automazione, Sicurezza e Semplicità per la tua Azienda. Gestisci contratti 
-                                        telefonici, luce e gas in un'unica piattaforma intelligente.
-                                    </p>
-                                    <div class="d-flex gap-3 hero-buttons">
-                                        <a href="https://app.coresuite.it/login.php" class="btn btn-lg btn-primary btn-hero mr-3">
-                                            <i class="fas fa-rocket mr-2"></i> Inizia Ora
-                                        </a>
-                                        <a href="#demo" class="btn btn-lg btn-outline-light btn-hero">
-                                            <i class="fas fa-play-circle mr-2"></i> Guarda il Demo
-                                        </a>
-                                    </div>
-                                    <div class="hero-badges mt-4">
-                                        <span class="badge bg-success">
-                                            <i class="fas fa-shield-alt mr-1"></i> Sicuro al 100%
-                                        </span>
-                                        <span class="badge bg-info ml-2">
-                                            <i class="fas fa-sync mr-1"></i> Aggiornamenti Continui
-                                        </span>
-                                        <span class="badge bg-warning ml-2">
-                                            <i class="fas fa-headset mr-1"></i> Supporto 24/7
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 mt-4 mt-lg-0" data-aos="fade-left">
-                                <div class="hero-image-wrapper">
-                                    <img src="assets/images/hero-illustration.svg" alt="CoreSuite Dashboard" class="img-fluid hero-image">
-                                    <div class="floating-card card-1">
-                                        <div class="small-card bg-success">
-                                            <i class="fas fa-check"></i>
-                                            <span>Contratto Completato</span>
-                                        </div>
-                                    </div>
-                                    <div class="floating-card card-2">
-                                        <div class="small-card bg-info">
-                                            <i class="fas fa-chart-line"></i>
-                                            <span>+27% Questo Mese</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Stats Section -->
-            <section class="content py-5 bg-light">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 col-sm-6 col-md-3">
-                            <div class="info-box" data-aos="fade-up">
-                                <span class="info-box-icon bg-primary"><i class="fas fa-users"></i></span>
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Clienti Attivi</span>
-                                    <span class="info-box-number">1,000+</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-3">
-                            <div class="info-box" data-aos="fade-up" data-aos-delay="100">
-                                <span class="info-box-icon bg-success"><i class="fas fa-file-contract"></i></span>
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Contratti Gestiti</span>
-                                    <span class="info-box-number">50,000+</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-3">
-                            <div class="info-box" data-aos="fade-up" data-aos-delay="200">
-                                <span class="info-box-icon bg-warning"><i class="fas fa-clock"></i></span>
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Ore Risparmiate</span>
-                                    <span class="info-box-number">10,000+</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-3">
-                            <div class="info-box" data-aos="fade-up" data-aos-delay="300">
-                                <span class="info-box-icon bg-danger"><i class="fas fa-building"></i></span>
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Gestori Supportati</span>
-                                    <span class="info-box-number">15+</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Funzionalità Section -->
-            <section id="funzionalita" class="content py-5">
-                <div class="container">
-                    <div class="text-center mb-5">
-                        <h2 class="content-header" data-aos="fade-up">Le Nostre Funzionalità</h2>
-                        <p class="lead" data-aos="fade-up">Scopri tutti gli strumenti che CoreSuite mette a tua disposizione</p>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-3" data-aos="fade-up">
-                            <div class="card card-primary card-outline h-100">
-                                <div class="card-body box-profile">
-                                    <div class="text-center mb-3">
-                                        <i class="fas fa-file-contract fa-3x text-primary"></i>
-                                    </div>
-                                    <h3 class="profile-username text-center">Gestione Contratti</h3>
-                                    <p class="text-muted text-center">
-                                        Gestisci contratti telefonici, luce e gas in un'unica piattaforma intuitiva.
-                                    </p>
-                                    <ul class="list-group list-group-unbordered mb-3">
-                                        <li class="list-group-item">
-                                            <i class="fas fa-check text-success mr-2"></i> Gestione Multi-servizio
-                                        </li>
-                                        <li class="list-group-item">
-                                            <i class="fas fa-check text-success mr-2"></i> Tracking Avanzato
-                                        </li>
-                                        <li class="list-group-item">
-                                            <i class="fas fa-check text-success mr-2"></i> Storico Completo
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                            <div class="card card-primary card-outline h-100">
-                                <div class="card-body box-profile">
-                                    <div class="text-center mb-3">
-                                        <i class="fas fa-magic fa-3x text-primary"></i>
-                                    </div>
-                                    <h3 class="profile-username text-center">Autocompletamento</h3>
-                                    <p class="text-muted text-center">
-                                        Sistema intelligente di autocompletamento per clienti esistenti.
-                                    </p>
-                                    <ul class="list-group list-group-unbordered mb-3">
-                                        <li class="list-group-item">
-                                            <i class="fas fa-check text-success mr-2"></i> AI Powered
-                                        </li>
-                                        <li class="list-group-item">
-                                            <i class="fas fa-check text-success mr-2"></i> Dati Verificati
-                                        </li>
-                                        <li class="list-group-item">
-                                            <i class="fas fa-check text-success mr-2"></i> Zero Errori
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                            <div class="card card-primary card-outline h-100">
-                                <div class="card-body box-profile">
-                                    <div class="text-center mb-3">
-                                        <i class="fas fa-chart-line fa-3x text-primary"></i>
-                                    </div>
-                                    <h3 class="profile-username text-center">Dashboard Interattiva</h3>
-                                    <p class="text-muted text-center">
-                                        Visualizza grafici e statistiche in tempo reale per monitorare le tue performance.
-                                    </p>
-                                    <ul class="list-group list-group-unbordered mb-3">
-                                        <li class="list-group-item">
-                                            <i class="fas fa-check text-success mr-2"></i> Report Real-time
-                                        </li>
-                                        <li class="list-group-item">
-                                            <i class="fas fa-check text-success mr-2"></i> Grafici Interattivi
-                                        </li>
-                                        <li class="list-group-item">
-                                            <i class="fas fa-check text-success mr-2"></i> Export Automatici
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                            <div class="card card-primary card-outline h-100">
-                                <div class="card-body box-profile">
-                                    <div class="text-center mb-3">
-                                        <i class="fas fa-shield-alt fa-3x text-primary"></i>
-                                    </div>
-                                    <h3 class="profile-username text-center">Sicurezza Avanzata</h3>
-                                    <p class="text-muted text-center">
-                                        Protezione dei dati con MFA e gestione ruoli differenziata.
-                                    </p>
-                                    <ul class="list-group list-group-unbordered mb-3">
-                                        <li class="list-group-item">
-                                            <i class="fas fa-check text-success mr-2"></i> MFA Integrato
-                                        </li>
-                                        <li class="list-group-item">
-                                            <i class="fas fa-check text-success mr-2"></i> Ruoli & Permessi
-                                        </li>
-                                        <li class="list-group-item">
-                                            <i class="fas fa-check text-success mr-2"></i> Audit Log
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Gestori Section -->
-            <section id="gestori" class="content py-5 bg-light">
-                <div class="container">
-                    <div class="text-center mb-5">
-                        <h2 class="content-header" data-aos="fade-up">Gestori Supportati</h2>
-                        <p class="lead" data-aos="fade-up">Integrazione completa con i principali operatori nazionali</p>
-                    </div>
-                    <div class="row align-items-center">
-                        <div class="col-lg-6" data-aos="fade-right">
-                            <div class="card card-primary card-outline">
-                                <div class="card-header">
-                                    <h3 class="card-title">
-                                        <i class="fas fa-phone-alt mr-2"></i>
-                                        Telefonia
-                                    </h3>
-                                </div>
-                                <div class="card-body">
-                                    <div class="row g-4 align-items-center">
-                                        <div class="col-4">
-                                            <img src="assets/images/fastweb-logo.png" alt="Fastweb" class="img-fluid filter-gray">
-                                        </div>
-                                        <div class="col-4">
-                                            <img src="assets/images/windtre-logo.png" alt="Windtre" class="img-fluid filter-gray">
-                                        </div>
-                                        <div class="col-4">
-                                            <img src="assets/images/pianetafibra-logo.png" alt="Pianeta Fibra" class="img-fluid filter-gray">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card card-primary card-outline mt-4">
-                                <div class="card-header">
-                                    <h3 class="card-title">
-                                        <i class="fas fa-bolt mr-2"></i>
-                                        Luce e Gas
-                                    </h3>
-                                </div>
-                                <div class="card-body">
-                                    <div class="row g-4 align-items-center">
-                                        <div class="col-4">
-                                            <img src="assets/images/enel-logo.png" alt="Enel Energia" class="img-fluid filter-gray">
-                                        </div>
-                                        <div class="col-4">
-                                            <img src="assets/images/fastweb-energia-logo.png" alt="Fastweb Energia" class="img-fluid filter-gray">
-                                        </div>
-                                        <div class="col-4">
-                                            <img src="assets/images/a2a-logo.png" alt="A2A Energia" class="img-fluid filter-gray">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6" data-aos="fade-left">
-                            <div class="callout callout-info">
-                                <h4><i class="fas fa-info-circle mr-2"></i> Gestione Semplificata dei Contratti</h4>
-                                <p class="lead">CoreSuite rende semplice e veloce la gestione dei contratti per tutti i principali gestori di servizi telefonici, luce e gas.</p>
-                            </div>
-                            <div class="card card-primary card-outline">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="info-box bg-gradient-info">
-                                                <span class="info-box-icon"><i class="fas fa-magic"></i></span>
-                                                <div class="info-box-content">
-                                                    <span class="info-box-text">Compilazione Automatica</span>
-                                                    <span class="info-box-number">dei Moduli</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="info-box bg-gradient-success">
-                                                <span class="info-box-icon"><i class="fas fa-check-double"></i></span>
-                                                <div class="info-box-content">
-                                                    <span class="info-box-text">Verifica Real-time</span>
-                                                    <span class="info-box-number">delle Offerte</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="info-box bg-gradient-warning">
-                                                <span class="info-box-icon"><i class="fas fa-tasks"></i></span>
-                                                <div class="info-box-content">
-                                                    <span class="info-box-text">Monitoraggio</span>
-                                                    <span class="info-box-number">Stato Pratiche</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="info-box bg-gradient-danger">
-                                                <span class="info-box-icon"><i class="fas fa-file-alt"></i></span>
-                                                <div class="info-box-content">
-                                                    <span class="info-box-text">Gestione</span>
-                                                    <span class="info-box-number">Documentazione</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Vantaggi Section -->
-            <section id="vantaggi" class="content py-5">
-                <div class="container">
-                    <div class="text-center mb-5">
-                        <h2 class="content-header" data-aos="fade-up">I Vantaggi di CoreSuite</h2>
-                        <p class="lead" data-aos="fade-up">Scopri perché sempre più aziende scelgono CoreSuite</p>
-                    </div>
-                    <div class="row align-items-center">
-                        <div class="col-lg-6" data-aos="fade-right">
-                            <div class="card card-primary card-outline">
-                                <div class="card-body">
-                                    <div class="direct-chat-msg">
-                                        <div class="direct-chat-infos clearfix">
-                                            <span class="direct-chat-timestamp float-right">Fino al 70% di tempo risparmiato</span>
-                                        </div>
-                                        <div class="direct-chat-img bg-primary d-flex align-items-center justify-content-center">
-                                            <i class="fas fa-clock text-white"></i>
-                                        </div>
-                                        <div class="direct-chat-text">
-                                            <h4 class="m-0">Risparmio di Tempo</h4>
-                                            <p class="text-muted mb-0">Automatizza le attività ripetitive e riduci i tempi di gestione.</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="direct-chat-msg right mt-4">
-                                        <div class="direct-chat-infos clearfix">
-                                            <span class="direct-chat-timestamp float-left">Intelligenza Artificiale integrata</span>
-                                        </div>
-                                        <div class="direct-chat-img bg-success d-flex align-items-center justify-content-center">
-                                            <i class="fas fa-robot text-white"></i>
-                                        </div>
-                                        <div class="direct-chat-text">
-                                            <h4 class="m-0">Automazione Intelligente</h4>
-                                            <p class="text-muted mb-0">Sistema di autocompletamento e suggerimenti basati sui dati storici.</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="direct-chat-msg mt-4">
-                                        <div class="direct-chat-infos clearfix">
-                                            <span class="direct-chat-timestamp float-right">Crittografia avanzata e MFA</span>
-                                        </div>
-                                        <div class="direct-chat-img bg-warning d-flex align-items-center justify-content-center">
-                                            <i class="fas fa-lock text-white"></i>
-                                        </div>
-                                        <div class="direct-chat-text">
-                                            <h4 class="m-0">Sicurezza Garantita</h4>
-                                            <p class="text-muted mb-0">Protezione dei dati con crittografia avanzata e autenticazione a più fattori.</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="direct-chat-msg right mt-4">
-                                        <div class="direct-chat-infos clearfix">
-                                            <span class="direct-chat-timestamp float-left">Desktop, Tablet e Mobile</span>
-                                        </div>
-                                        <div class="direct-chat-img bg-danger d-flex align-items-center justify-content-center">
-                                            <i class="fas fa-mobile-alt text-white"></i>
-                                        </div>
-                                        <div class="direct-chat-text">
-                                            <h4 class="m-0">Accessibilità Totale</h4>
-                                            <p class="text-muted mb-0">Accedi alla piattaforma da qualsiasi dispositivo, ovunque ti trovi.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6" data-aos="fade-left">
-                            <img src="assets/images/advantages-illustration.svg" alt="CoreSuite Vantaggi" class="img-fluid">
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Testimonianze Section -->
-            <section class="content py-5 bg-light">
-                <div class="container">
-                    <div class="text-center mb-5">
-                        <h2 class="content-header" data-aos="fade-up">Cosa Dicono i Nostri Clienti</h2>
-                        <p class="lead" data-aos="fade-up">Esperienze reali di chi usa CoreSuite ogni giorno</p>
-                    </div>
-                    
-                    <!-- Testimonial Slider -->
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card card-primary card-outline card-tabs">
-                                <div class="card-header p-0 pt-1 border-bottom-0">
-                                    <ul class="nav nav-tabs" role="tablist">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" data-toggle="pill" href="#testimonial1" role="tab">Agenzia Milano</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" data-toggle="pill" href="#testimonial2" role="tab">Studio Roma</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" data-toggle="pill" href="#testimonial3" role="tab">Consulente Napoli</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="card-body">
-                                    <div class="tab-content">
-                                        <div class="tab-pane fade show active" id="testimonial1" role="tabpanel">
-                                            <div class="d-flex align-items-center mb-4">
-                                                <div class="mr-4">
-                                                    <img src="https://ui-avatars.com/api/?name=Marco+Rossi&background=random" 
-                                                         alt="Marco Rossi" 
-                                                         class="rounded-circle" 
-                                                         width="80">
-                                                </div>
-                                                <div>
-                                                    <h5 class="mb-1">Marco Rossi</h5>
-                                                    <p class="text-muted mb-0">Direttore Commerciale, Agenzia Milano</p>
-                                                </div>
-                                            </div>
-                                            <div class="testimonial-content">
-                                                <i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
-                                                <p class="lead">
-                                                    "CoreSuite ha rivoluzionato il nostro modo di gestire i contratti. 
-                                                    L'automazione ci ha permesso di ridurre gli errori del 90% e di 
-                                                    velocizzare notevolmente il processo di acquisizione clienti."
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane fade" id="testimonial2" role="tabpanel">
-                                            <div class="d-flex align-items-center mb-4">
-                                                <div class="mr-4">
-                                                    <img src="https://ui-avatars.com/api/?name=Laura+Bianchi&background=random" 
-                                                         alt="Laura Bianchi" 
-                                                         class="rounded-circle" 
-                                                         width="80">
-                                                </div>
-                                                <div>
-                                                    <h5 class="mb-1">Laura Bianchi</h5>
-                                                    <p class="text-muted mb-0">Titolare, Studio Roma</p>
-                                                </div>
-                                            </div>
-                                            <div class="testimonial-content">
-                                                <i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
-                                                <p class="lead">
-                                                    "Da quando utilizziamo CoreSuite, la gestione dei contratti è diventata 
-                                                    molto più efficiente. L'interfaccia intuitiva e il supporto eccellente 
-                                                    hanno reso l'adozione del sistema rapidissima."
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane fade" id="testimonial3" role="tabpanel">
-                                            <div class="d-flex align-items-center mb-4">
-                                                <div class="mr-4">
-                                                    <img src="https://ui-avatars.com/api/?name=Giuseppe+Verdi&background=random" 
-                                                         alt="Giuseppe Verdi" 
-                                                         class="rounded-circle" 
-                                                         width="80">
-                                                </div>
-                                                <div>
-                                                    <h5 class="mb-1">Giuseppe Verdi</h5>
-                                                    <p class="text-muted mb-0">Consulente Energetico, Napoli</p>
-                                                </div>
-                                            </div>
-                                            <div class="testimonial-content">
-                                                <i class="fas fa-quote-left fa-2x text-primary mb-3"></i>
-                                                <p class="lead">
-                                                    "CoreSuite mi ha permesso di triplicare il numero di contratti gestiti 
-                                                    mensilmente. La possibilità di accedere da qualsiasi dispositivo e 
-                                                    l'automazione dei processi sono caratteristiche fondamentali."
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Pricing Section -->
-            <section class="content py-5">
-                <div class="container">
-                    <div class="text-center mb-5">
-                        <h2 class="content-header" data-aos="fade-up">Piani e Prezzi</h2>
-                        <p class="lead" data-aos="fade-up">Scegli il piano più adatto alle tue esigenze</p>
-                    </div>
-                    <div class="row">
-                        <!-- Starter Plan -->
-                        <div class="col-lg-4" data-aos="fade-up">
-                            <div class="card card-outline">
-                                <div class="card-header text-center">
-                                    <h3 class="card-title">Starter</h3>
-                                    <div class="card-tools">
-                                        <span class="badge badge-info">
-                                            Per Iniziare
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="text-center">
-                                        <h2 class="pricing-header">
-                                            €49<small>/mese</small>
-                                        </h2>
-                                        <p class="text-muted">Ideale per agenti individuali</p>
-                                    </div>
-                                    <ul class="list-unstyled mt-4">
-                                        <li class="mb-3">
-                                            <i class="fas fa-check text-success mr-2"></i> Fino a 50 contratti/mese
-                                        </li>
-                                        <li class="mb-3">
-                                            <i class="fas fa-check text-success mr-2"></i> Dashboard base
-                                        </li>
-                                        <li class="mb-3">
-                                            <i class="fas fa-check text-success mr-2"></i> Supporto email
-                                        </li>
-                                        <li class="mb-3">
-                                            <i class="fas fa-times text-danger mr-2"></i> API access
-                                        </li>
-                                        <li class="mb-3">
-                                            <i class="fas fa-times text-danger mr-2"></i> Reportistica avanzata
-                                        </li>
-                                    </ul>
-                                    <div class="text-center mt-4">
-                                        <a href="https://app.coresuite.it/login.php" class="btn btn-outline-primary btn-lg btn-block">
-                                            Prova Gratis
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Professional Plan -->
-                        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                            <div class="card card-primary card-outline">
-                                <div class="ribbon-wrapper">
-                                    <div class="ribbon bg-primary">
-                                        Popular
-                                    </div>
-                                </div>
-                                <div class="card-header text-center">
-                                    <h3 class="card-title">Professional</h3>
-                                    <div class="card-tools">
-                                        <span class="badge badge-primary">
-                                            Più Venduto
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="text-center">
-                                        <h2 class="pricing-header">
-                                            €99<small>/mese</small>
-                                        </h2>
-                                        <p class="text-muted">Perfetto per piccole agenzie</p>
-                                    </div>
-                                    <ul class="list-unstyled mt-4">
-                                        <li class="mb-3">
-                                            <i class="fas fa-check text-success mr-2"></i> Contratti illimitati
-                                        </li>
-                                        <li class="mb-3">
-                                            <i class="fas fa-check text-success mr-2"></i> Dashboard avanzata
-                                        </li>
-                                        <li class="mb-3">
-                                            <i class="fas fa-check text-success mr-2"></i> Supporto prioritario
-                                        </li>
-                                        <li class="mb-3">
-                                            <i class="fas fa-check text-success mr-2"></i> API access
-                                        </li>
-                                        <li class="mb-3">
-                                            <i class="fas fa-times text-danger mr-2"></i> White label
-                                        </li>
-                                    </ul>
-                                    <div class="text-center mt-4">
-                                        <a href="https://app.coresuite.it/login.php" class="btn btn-primary btn-lg btn-block">
-                                            Inizia Ora
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Enterprise Plan -->
-                        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                            <div class="card card-outline">
-                                <div class="card-header text-center">
-                                    <h3 class="card-title">Enterprise</h3>
-                                    <div class="card-tools">
-                                        <span class="badge badge-success">
-                                            Completo
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="text-center">
-                                        <h2 class="pricing-header">
-                                            Contattaci
-                                        </h2>
-                                        <p class="text-muted">Per grandi organizzazioni</p>
-                                    </div>
-                                    <ul class="list-unstyled mt-4">
-                                        <li class="mb-3">
-                                            <i class="fas fa-check text-success mr-2"></i> Tutto di Professional
-                                        </li>
-                                        <li class="mb-3">
-                                            <i class="fas fa-check text-success mr-2"></i> White label
-                                        </li>
-                                        <li class="mb-3">
-                                            <i class="fas fa-check text-success mr-2"></i> Integrazioni custom
-                                        </li>
-                                        <li class="mb-3">
-                                            <i class="fas fa-check text-success mr-2"></i> Account manager dedicato
-                                        </li>
-                                        <li class="mb-3">
-                                            <i class="fas fa-check text-success mr-2"></i> SLA garantito
-                                        </li>
-                                    </ul>
-                                    <div class="text-center mt-4">
-                                        <a href="#" class="btn btn-success btn-lg btn-block">
-                                            Contattaci
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- CTA Section -->
-            <section class="content py-5 bg-gradient-primary text-white">
-                <div class="container text-center">
-                    <h2 class="mb-4" data-aos="fade-up">Pronto a Iniziare?</h2>
-                    <p class="lead mb-4" data-aos="fade-up">Unisciti a migliaia di professionisti che hanno già scelto CoreSuite</p>
-                    <a href="https://app.coresuite.it/login.php" class="btn btn-lg btn-light" data-aos="zoom-in">
-                        <i class="fas fa-rocket mr-2"></i> Inizia Ora
-                    </a>
-                </div>
-            </section>
-        </div>
-        <!-- /.content-wrapper -->
-
-        <!-- Main Footer -->
-        <footer class="main-footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 mb-4 mb-md-0">
-                        <img src="assets/images/logo-white.png" alt="CoreSuite Logo" height="40" class="mb-3">
-                        <p class="text-muted mb-0">La soluzione completa per la gestione dei tuoi contratti.</p>
-                    </div>
-                    <div class="col-md-2 mb-4 mb-md-0">
-                        <h5>Prodotto</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="#funzionalita">Funzionalità</a></li>
-                            <li><a href="#gestori">Gestori</a></li>
-                            <li><a href="#vantaggi">Vantaggi</a></li>
-                            <li><a href="supporto.php">Supporto</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-2 mb-4 mb-md-0">
-                        <h5>Azienda</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Chi Siamo</a></li>
-                            <li><a href="#">Contatti</a></li>
-                            <li><a href="#">Lavora con Noi</a></li>
-                            <li><a href="#">Partner</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-2 mb-4 mb-md-0">
-                        <h5>Legale</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="privacy-policy.php">Privacy Policy</a></li>
-                            <li><a href="termini-condizioni.php">Termini e Condizioni</a></li>
-                            <li><a href="#">Cookie Policy</a></li>
-                            <li><a href="#">GDPR</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-2">
-                        <h5>Social</h5>
-                        <div class="social-links">
-                            <a href="#" class="mr-2"><i class="fab fa-facebook fa-lg"></i></a>
-                            <a href="#" class="mr-2"><i class="fab fa-twitter fa-lg"></i></a>
-                            <a href="#" class="mr-2"><i class="fab fa-linkedin fa-lg"></i></a>
-                            <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <hr class="mt-4">
-                <div class="row align-items-center">
-                    <div class="col-md-6">
-                        <p class="text-muted mb-0">
-                            &copy; <?php echo $current_year; ?> CoreSuite. Tutti i diritti riservati.
-                        </p>
-                    </div>
-                    <div class="col-md-6 text-md-right">
-                        <img src="assets/images/payment-methods.png" alt="Metodi di Pagamento" height="30">
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </div>
-    <!-- ./wrapper -->
-
-    <!-- REQUIRED SCRIPTS -->
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
-    <!-- AOS Animation -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- Custom JS -->
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+      <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/assets/css/components.css" rel="stylesheet">
     <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            once: true
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Navbar scroll behavior
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.main-header');
-            if (window.scrollY > 50) {
-                navbar.classList.add('navbar-light', 'bg-white', 'shadow-sm');
-                navbar.classList.remove('navbar-dark', 'bg-transparent');
-            } else {
-                navbar.classList.remove('navbar-light', 'bg-white', 'shadow-sm');
-                navbar.classList.add('navbar-dark', 'bg-transparent');
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        secondary: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            200: '#ddd6fe',
+                            300: '#c4b5fd',
+                            400: '#a78bfa',
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            700: '#6d28d9',
+                            800: '#5b21b6',
+                            900: '#4c1d95',
+                        },
+                    },
+                },
+                fontFamily: {
+                    'sans': ['Source Sans Pro', 'ui-sans-serif', 'system-ui'],
+                }
             }
-        });
+        }
     </script>
+</head>
+<body class="dark-transition bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white">
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-gray-900 transition-opacity duration-500">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-40 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <a href="/" class="flex items-center space-x-2">
+                    <img src="/assets/images/logo.png" alt="CoreSuite Logo" class="h-10 w-auto dark:hidden">
+                    <img src="/assets/images/logo-white.png" alt="CoreSuite Logo" class="h-10 w-auto hidden dark:block">
+                </a>
+                
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="nav-link">Funzionalità</a>
+                    <a href="#providers" class="nav-link">Gestori</a>
+                    <a href="#benefits" class="nav-link">Vantaggi</a>
+                    <a href="https://app.coresuite.it/login.php" class="btn-primary-gradient">Accedi</a>
+                </div>
+
+                <!-- Menu Mobile Button -->
+                <button class="md:hidden mobile-menu-button p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Menu Mobile -->
+            <div class="mobile-menu hidden md:hidden mt-4 py-4 bg-white dark:bg-gray-800 rounded-lg shadow-xl">
+                <a href="#features" class="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">Funzionalità</a>
+                <a href="#providers" class="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">Gestori</a>
+                <a href="#benefits" class="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">Vantaggi</a>
+                <a href="https://app.coresuite.it/login.php" class="block px-4 py-2 text-sm text-primary-600 dark:text-primary-400 font-semibold">Accedi</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center">
+        <div class="absolute inset-0 dynamic-gradient opacity-90"></div>
+        <div class="container mx-auto px-4 py-20 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                        La Soluzione Definitiva per la Gestione dei Tuoi Contratti
+                    </h1>
+                    <p class="text-xl mb-8 opacity-90">
+                        Gestisci in modo intelligente e integrato i tuoi contratti telefonici, luce e gas. 
+                        Tutto in un'unica piattaforma potente e intuitiva.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://app.coresuite.it/login.php" class="btn-primary-gradient">
+                            <i class="fas fa-sign-in-alt mr-2"></i>
+                            Accedi Ora
+                        </a>
+                        <a href="#features" class="btn-outline">
+                            Scopri di più
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:block animate-float">
+                    <img src="/assets/images/hero-illustration.svg" alt="CoreSuite Dashboard" class="w-full">
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 dark:from-gray-900 to-transparent"></div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Funzionalità Principali</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="card-feature group">
+                    <div class="icon-circle bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 group-hover:bg-primary-600 group-hover:text-white">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Gestione Contratti</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Telefonici, Luce e Gas in un'unica piattaforma integrata.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="card-feature group">
+                    <div class="icon-circle bg-secondary-100 dark:bg-secondary-900 text-secondary-600 dark:text-secondary-400 group-hover:bg-secondary-600 group-hover:text-white">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Autocompletamento Dati</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Riconosce automaticamente i clienti esistenti.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="card-feature group">
+                    <div class="icon-circle bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-400 group-hover:bg-green-600 group-hover:text-white">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Dashboard Interattiva</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Grafici e statistiche in tempo reale.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="card-feature group">
+                    <div class="icon-circle bg-yellow-100 dark:bg-yellow-900 text-yellow-600 dark:text-yellow-400 group-hover:bg-yellow-600 group-hover:text-white">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Sicurezza Avanzata</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Accesso con MFA e ruoli differenziati.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Providers Section -->
+    <section id="providers" class="py-20 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">Gestori Supportati</h2>
+            <p class="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
+                CoreSuite ottimizza la gestione dei contratti per i principali gestori di telefonia, luce e gas in Italia.
+            </p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-12 items-center justify-items-center">
+                <img src="/assets/images/fastweb-logo.png" alt="Fastweb" class="provider-logo">
+                <img src="/assets/images/enel-logo.png" alt="Enel Energia" class="provider-logo">
+                <img src="/assets/images/fastweb-energia-logo.png" alt="Fastweb Energia" class="provider-logo">
+                <img src="/assets/images/a2a-logo.png" alt="A2A Energia" class="provider-logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Perché Scegliere CoreSuite</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center">
+                                <i class="fas fa-clock text-primary-600 dark:text-primary-400"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-xl font-semibold mb-2">Risparmio di Tempo</h3>
+                                <p class="text-gray-600 dark:text-gray-400">
+                                    Automazione intelligente che riduce drasticamente i tempi di gestione.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-secondary-100 dark:bg-secondary-900 flex items-center justify-center">
+                                <i class="fas fa-lock text-secondary-600 dark:text-secondary-400"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-xl font-semibold mb-2">Sicurezza Avanzata</h3>
+                                <p class="text-gray-600 dark:text-gray-400">
+                                    Protezione dei dati e conformità GDPR garantita.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center">
+                                <i class="fas fa-mobile-alt text-green-600 dark:text-green-400"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-xl font-semibold mb-2">Accessibilità Totale</h3>
+                                <p class="text-gray-600 dark:text-gray-400">
+                                    Accedi da qualsiasi dispositivo, ovunque tu sia.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-yellow-100 dark:bg-yellow-900 flex items-center justify-center">
+                                <i class="fas fa-laptop text-yellow-600 dark:text-yellow-400"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-xl font-semibold mb-2">Interfaccia Intuitiva</h3>
+                                <p class="text-gray-600 dark:text-gray-400">
+                                    Design moderno e user-friendly per un'esperienza ottimale.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-float">
+                    <img src="/assets/images/advantages-illustration.svg" alt="CoreSuite Vantaggi" class="w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <img src="/assets/images/logo-white.png" alt="CoreSuite Logo" class="h-10 mb-4">
+                    <p class="text-gray-400">
+                        La soluzione moderna per la gestione dei contratti.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Collegamenti</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition-colors">Funzionalità</a></li>
+                        <li><a href="#providers" class="text-gray-400 hover:text-white transition-colors">Gestori</a></li>
+                        <li><a href="#benefits" class="text-gray-400 hover:text-white transition-colors">Vantaggi</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legale</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/privacy-policy.php" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="/termini-condizioni.php" class="text-gray-400 hover:text-white transition-colors">Termini e Condizioni</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contatti</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/supporto.php" class="text-gray-400 hover:text-white transition-colors">Supporto</a></li>
+                        <li class="flex space-x-4 mt-4">
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; <?php echo date('Y'); ?> CoreSuite. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Theme script -->
+    <script src="/assets/js/theme.js"></script>
 </body>
 </html>
