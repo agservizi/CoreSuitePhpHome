@@ -20,17 +20,18 @@ $current_year = date('Y');
     <!-- Custom CSS -->
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
-<body>    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+<body>    <!-- Main Navbar -->
+    <nav class="main-header navbar navbar-expand-lg navbar-light">
         <div class="container">
             <a class="navbar-brand" href="https://coresuite.it/">
-                <img src="assets/images/logo.png" alt="CoreSuite Logo" height="35" width="auto">
+                <img src="assets/images/logo.png" alt="CoreSuite Logo" height="32" class="brand-image">
+                <span class="brand-text font-weight-light d-none">CoreSuite</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
+            <div class="collapse navbar-collapse order-3" id="navbarNav">
+                <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="#funzionalita">Funzionalità</a>
                     </li>
@@ -41,7 +42,14 @@ $current_year = date('Y');
                         <a class="nav-link" href="#vantaggi">Vantaggi</a>
                     </li>
                 </ul>
-                <a href="https://app.coresuite.it/login.php" class="btn btn-primary">Accedi</a>
+                <!-- Right navbar links -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="https://app.coresuite.it/login.php" class="nav-link btn btn-primary text-white">
+                            <i class="fas fa-sign-in-alt mr-2"></i> Accedi
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
