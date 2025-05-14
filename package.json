@@ -1,0 +1,21 @@
+{
+  "name": "coresuite-landing",
+  "version": "1.0.0",
+  "description": "Landing page per Coresuite",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify"
+  },
+  "keywords": [
+    "coresuite",
+    "landing",
+    "php",
+    "tailwind"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.5"
+  }
+}
