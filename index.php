@@ -1,489 +1,160 @@
-<?php
-// Impostazioni SEO
-$pageTitle = "CoreSuite - La Soluzione Definitiva per la Gestione dei Tuoi Contratti";
-$pageDescription = "Gestisci in modo efficiente i contratti telefonici, luce e gas con CoreSuite. Piattaforma all-in-one con autocompletamento dati e dashboard interattiva.";
-?>
 <!DOCTYPE html>
-<html lang="it" class="scroll-smooth">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $pageTitle; ?></title>
-    <meta name="description" content="<?php echo $pageDescription; ?>">
-    
-    <!-- Meta tags SEO -->
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="<?php echo $pageTitle; ?>">
-    <meta property="og:description" content="<?php echo $pageDescription; ?>">
-    <meta property="og:image" content="/assets/images/logo.png">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-      <!-- TailwindCSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="/assets/css/components.css" rel="stylesheet">    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            200: '#bae6fd',
-                            300: '#7dd3fc',
-                            400: '#38bdf8',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            700: '#0369a1',
-                            800: '#075985',
-                            900: '#0c4a6e',
-                        },
-                        secondary: {
-                            50: '#f5f3ff',
-                            100: '#ede9fe',
-                            200: '#ddd6fe',
-                            300: '#c4b5fd',
-                            400: '#a78bfa',
-                            500: '#8b5cf6',
-                            600: '#7c3aed',
-                            700: '#6d28d9',
-                            800: '#5b21b6',
-                            900: '#4c1d95',
-                        },
-                    },
-                    animation: {
-                        'shimmer': 'shimmer 3s linear infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'shine': 'shine 3s ease-in-out infinite',
-                        'slide-up': 'slide-up 0.5s ease-out',
-                        'rotate-slow': 'rotate 8s linear infinite',
-                    },
-                    keyframes: {
-                        shimmer: {
-                            '0%': { backgroundPosition: '200% 0' },
-                            '100%': { backgroundPosition: '-200% 0' }
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' }
-                        },
-                        shine: {
-                            '0%': { transform: 'translateX(-100%)' },
-                            '100%': { transform: 'translateX(100%)' }
-                        },
-                        'slide-up': {
-                            '0%': {
-                                opacity: '0',
-                                transform: 'translateY(20px)'
-                            },
-                            '100%': {
-                                opacity: '1',
-                                transform: 'translateY(0)'
-                            }
-                        }
-                    }
-                },
-                fontFamily: {
-                    'sans': ['Source Sans Pro', 'ui-sans-serif', 'system-ui'],
-                }
-            }
-        }
-    </script>
+    <meta name="description" content="Scopri Coresuite, l'applicativo web per gestire al meglio i tuoi contratti. Semplice, sicuro e potente!">
+    <title>Coresuite - La tua piattaforma per la gestione di contratti telefonici, luce e gas</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link href="/dist/output.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        [data-animate] {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease-out;
-        }
-        [data-animate].animated {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .btn-primary-gradient {
-            background-size: 200% auto;
-            transition: all 0.3s ease;
-        }
-        .btn-primary-gradient:hover {
-            background-position: right center;
-        }
-
-        .card-feature::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                90deg,
-                transparent,
-                rgba(255, 255, 255, 0.2),
-                transparent
-            );
-            transition: 0.5s;
-        }
-        
-        .card-feature:hover::before {
-            left: 100%;
-        }
-
-        .dynamic-gradient {
-            background: linear-gradient(-45deg, #0ea5e9, #7c3aed, #0284c7, #6d28d9);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-        }
-
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+      body { font-family: 'Inter', 'Roboto', sans-serif; }
     </style>
 </head>
-<body class="dark-transition bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white">
-    <!-- Preloader -->
-    <div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-gray-900 transition-opacity duration-500">
-        <div class="loading-spinner"></div>
-    </div>
-
+<body class="bg-gradient-to-br from-blue-50 to-gray-100 text-gray-900">
     <!-- Navbar -->
-    <nav class="fixed w-full z-40 transition-all duration-300">
-        <div class="container mx-auto px-4 py-3">
-            <div class="flex items-center justify-between">
-                <a href="/" class="flex items-center space-x-2">
-                    <img src="/assets/images/logo.png" alt="CoreSuite Logo" class="h-10 w-auto dark:hidden">
-                    <img src="/assets/images/logo-white.png" alt="CoreSuite Logo" class="h-10 w-auto hidden dark:block">
-                </a>
-                
-                <!-- Menu Desktop -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#features" class="nav-link">Funzionalità</a>
-                    <a href="#providers" class="nav-link">Gestori</a>
-                    <a href="#benefits" class="nav-link">Vantaggi</a>
-                    <a href="https://app.coresuite.it/login.php" class="btn-primary-gradient">Accedi</a>
-                </div>
-
-                <!-- Menu Mobile Button -->
-                <button class="md:hidden mobile-menu-button p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+    <nav class="fixed w-full z-30 bg-white/80 backdrop-blur border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="/logo-coresuite.png" alt="Coresuite Logo" class="h-8 w-8">
+                <span class="font-bold text-xl text-blue-700">Coresuite</span>
             </div>
-
-            <!-- Menu Mobile -->
-            <div class="mobile-menu hidden md:hidden mt-4 py-4 bg-white dark:bg-gray-800 rounded-lg shadow-xl">
-                <a href="#features" class="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">Funzionalità</a>
-                <a href="#providers" class="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">Gestori</a>
-                <a href="#benefits" class="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">Vantaggi</a>
-                <a href="https://app.coresuite.it/login.php" class="block px-4 py-2 text-sm text-primary-600 dark:text-primary-400 font-semibold">Accedi</a>
-            </div>
+            <ul class="hidden md:flex space-x-8 font-medium">
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#features" class="nav-link">Caratteristiche</a></li>
+                <li><a href="#how" class="nav-link">Come funziona</a></li>
+                <li><a href="https://app.coresuite.it/login.php" class="nav-link text-orange-500 hover:text-orange-600">Accedi</a></li>
+            </ul>
         </div>
-    </nav>    <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center overflow-hidden">
-        <div class="absolute inset-0 dynamic-gradient opacity-90" data-parallax="10"></div>
-        <div class="container mx-auto px-4 py-20 relative z-10">
-            <div class="grid md:grid-cols-2 gap-12 items-center">                <div class="text-white">
-                    <h2 class="text-2xl md:text-3xl font-semibold mb-4 text-primary-200" data-animate>
-                        Benvenuto in CoreSuite
-                    </h2>
-                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-primary-200" data-animate style="transition-delay: 100ms;">
-                        La Soluzione Definitiva per la Gestione dei Tuoi Contratti
-                    </h1>
-                    <p class="text-xl mb-8 opacity-90 text-primary-100" data-animate style="transition-delay: 200ms;">
-                        Gestisci in modo intelligente e integrato i tuoi contratti telefonici, luce e gas. 
-                        Tutto in un'unica piattaforma potente e intuitiva.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4" data-animate style="transition-delay: 400ms;">
-                        <a href="https://app.coresuite.it/login.php" class="btn-primary-gradient">
-                            <i class="fas fa-sign-in-alt mr-2"></i>
-                            Accedi Ora
-                        </a>
-                        <a href="#features" class="btn-outline">
-                            Scopri di più
-                            <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="hidden md:block animate-float">
-                    <img src="/assets/images/hero-illustration.svg" alt="CoreSuite Dashboard" class="w-full">
-                </div>
-            </div>
-        </div>
-        <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 dark:from-gray-900 to-transparent"></div>
-    </section>    <!-- Features Section -->
-    <section id="features" class="py-20 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-primary-50/30 to-secondary-50/30 dark:from-primary-900/30 dark:to-secondary-900/30"></div>
-        <div class="container mx-auto px-4 relative">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-                    Funzionalità Principali
-                </h2>
-                <p class="text-lg text-gray-600 dark:text-gray-400">
-                    Scopri come CoreSuite rivoluziona la gestione dei contratti con strumenti all'avanguardia
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-8 relative">
-                <!-- Feature 1 -->
-                <div class="group relative" data-animate style="transition-delay: 0ms;">
-                    <div class="relative p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-r from-primary-600/5 to-secondary-600/5 dark:from-primary-600/10 dark:to-secondary-600/10 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
-                        <div class="relative flex items-start">
-                            <div class="flex-shrink-0 mr-6">
-                                <div class="w-16 h-16 rounded-xl bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-2xl text-primary-600 dark:text-primary-400 transition-colors duration-300 group-hover:bg-primary-600 group-hover:text-white">
-                                    <i class="fas fa-file-contract"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Gestione Contratti</h3>
-                                <p class="text-gray-600 dark:text-gray-400 mb-4">
-                                    Telefonici, Luce e Gas in un'unica piattaforma integrata con gestione semplificata e automatizzata.
-                                </p>
-                                <ul class="space-y-2">
-                                    <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
-                                        <i class="fas fa-check text-primary-600 mr-2"></i>
-                                        Gestione multi-contratto
-                                    </li>
-                                    <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
-                                        <i class="fas fa-check text-primary-600 mr-2"></i>
-                                        Archiviazione automatica
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    </nav>
 
-                <!-- Feature 2 -->
-                <div class="group relative" data-animate style="transition-delay: 200ms;">
-                    <div class="relative p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-r from-secondary-600/5 to-primary-600/5 dark:from-secondary-600/10 dark:to-primary-600/10 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
-                        <div class="relative flex items-start">
-                            <div class="flex-shrink-0 mr-6">
-                                <div class="w-16 h-16 rounded-xl bg-secondary-100 dark:bg-secondary-900/50 flex items-center justify-center text-2xl text-secondary-600 dark:text-secondary-400 transition-colors duration-300 group-hover:bg-secondary-600 group-hover:text-white">
-                                    <i class="fas fa-magic"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Autocompletamento Dati</h3>
-                                <p class="text-gray-600 dark:text-gray-400 mb-4">
-                                    Sistema intelligente che riconosce e completa automaticamente i dati dei clienti esistenti.
-                                </p>
-                                <ul class="space-y-2">
-                                    <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
-                                        <i class="fas fa-check text-secondary-600 mr-2"></i>
-                                        Riconoscimento automatico
-                                    </li>
-                                    <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
-                                        <i class="fas fa-check text-secondary-600 mr-2"></i>
-                                        Validazione in tempo reale
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Feature 3 -->
-                <div class="group relative" data-animate style="transition-delay: 400ms;">
-                    <div class="relative p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-r from-green-600/5 to-primary-600/5 dark:from-green-600/10 dark:to-primary-600/10 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
-                        <div class="relative flex items-start">
-                            <div class="flex-shrink-0 mr-6">
-                                <div class="w-16 h-16 rounded-xl bg-green-100 dark:bg-green-900/50 flex items-center justify-center text-2xl text-green-600 dark:text-green-400 transition-colors duration-300 group-hover:bg-green-600 group-hover:text-white">
-                                    <i class="fas fa-chart-line"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Dashboard Interattiva</h3>
-                                <p class="text-gray-600 dark:text-gray-400 mb-4">
-                                    Visualizza e analizza i dati in tempo reale con grafici interattivi e report dettagliati.
-                                </p>
-                                <ul class="space-y-2">
-                                    <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
-                                        <i class="fas fa-check text-green-600 mr-2"></i>
-                                        Grafici personalizzabili
-                                    </li>
-                                    <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
-                                        <i class="fas fa-check text-green-600 mr-2"></i>
-                                        Report automatici
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Feature 4 -->
-                <div class="group relative" data-animate style="transition-delay: 600ms;">
-                    <div class="relative p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-r from-yellow-600/5 to-secondary-600/5 dark:from-yellow-600/10 dark:to-secondary-600/10 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
-                        <div class="relative flex items-start">
-                            <div class="flex-shrink-0 mr-6">
-                                <div class="w-16 h-16 rounded-xl bg-yellow-100 dark:bg-yellow-900/50 flex items-center justify-center text-2xl text-yellow-600 dark:text-yellow-400 transition-colors duration-300 group-hover:bg-yellow-600 group-hover:text-white">
-                                    <i class="fas fa-shield-alt"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Sicurezza Avanzata</h3>
-                                <p class="text-gray-600 dark:text-gray-400 mb-4">
-                                    Protezione completa dei dati con autenticazione multi-fattore e gestione ruoli avanzata.
-                                </p>
-                                <ul class="space-y-2">
-                                    <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
-                                        <i class="fas fa-check text-yellow-600 mr-2"></i>
-                                        Autenticazione MFA
-                                    </li>
-                                    <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
-                                        <i class="fas fa-check text-yellow-600 mr-2"></i>
-                                        Controllo accessi granulare
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- Hero Section -->
+    <section id="hero" class="pt-32 pb-20 text-center bg-gradient-to-br from-blue-100 to-blue-50">
+        <div class="max-w-2xl mx-auto">
+            <img src="/logo-coresuite.png" alt="Coresuite Logo" class="mx-auto h-20 w-20 mb-4 animate-fade-in">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-blue-800 animate-fade-in">Gestisci i tuoi contratti in modo semplice e sicuro</h1>
+            <p class="text-lg md:text-xl mb-8 text-gray-700 animate-fade-in delay-100">Coresuite è la piattaforma web per la gestione di contratti telefonici, luce e gas. Semplifica, analizza e ottimizza tutto in un unico posto.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="https://app.coresuite.it/login.php" class="px-8 py-3 bg-orange-500 text-white rounded-lg shadow-lg font-semibold text-lg hover:bg-orange-600 transition animate-fade-in delay-200">Accedi ora</a>
+                <a href="#features" class="px-8 py-3 bg-white text-blue-700 border border-blue-700 rounded-lg font-semibold text-lg hover:bg-blue-50 transition animate-fade-in delay-300">Scopri di più</a>
             </div>
         </div>
     </section>
 
-    <!-- Providers Section -->
-    <section id="providers" class="py-20 bg-gray-100 dark:bg-gray-800">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">Gestori Supportati</h2>
-            <p class="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
-                CoreSuite ottimizza la gestione dei contratti per i principali gestori di telefonia, luce e gas in Italia.
-            </p>
-              <div class="grid grid-cols-2 md:grid-cols-3 gap-12 items-center justify-items-center">
-                <img src="/assets/images/fastweb-logo.png" alt="Fastweb" class="h-8 max-w-[100px] object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 transform hover:scale-110">
-                <img src="/assets/images/enel-logo.png" alt="Enel Energia" class="h-8 max-w-[100px] object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 transform hover:scale-110">
-                <img src="/assets/images/fastweb-energia-logo.png" alt="Fastweb Energia" class="h-8 max-w-[100px] object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 transform hover:scale-110">
-                <img src="/assets/images/a2a-logo.png" alt="A2A Energia" class="h-8 max-w-[100px] object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 transform hover:scale-110">
+    <!-- Caratteristiche -->
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-800 mb-12">Caratteristiche principali</h2>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="flex items-start space-x-4 animate-fade-in-up">
+                    <span class="bg-blue-100 text-blue-700 p-3 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2a4 4 0 004 4h2a4 4 0 004-4z" /></svg></span>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-1">Gestione contratti</h3>
+                        <p class="text-gray-600">Gestisci contratti telefonici, luce e gas in modo centralizzato e intuitivo.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4 animate-fade-in-up delay-100">
+                    <span class="bg-blue-100 text-blue-700 p-3 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0-1.104.896-2 2-2s2 .896 2 2-.896 2-2 2-2-.896-2-2z" /></svg></span>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-1">Sicurezza avanzata</h3>
+                        <p class="text-gray-600">Sistema di autenticazione sicuro con MFA2 per proteggere i tuoi dati.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4 animate-fade-in-up delay-200">
+                    <span class="bg-blue-100 text-blue-700 p-3 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16h8M8 12h8m-8-4h8" /></svg></span>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-1">Form interattivi</h3>
+                        <p class="text-gray-600">Form smart con autocompletamento per una gestione rapida e senza errori.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4 animate-fade-in-up delay-300">
+                    <span class="bg-blue-100 text-blue-700 p-3 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17a2 2 0 002 2h6a2 2 0 002-2V7a2 2 0 00-2-2h-6a2 2 0 00-2 2v10z" /></svg></span>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-1">Dashboard intuitiva</h3>
+                        <p class="text-gray-600">Dashboard con grafici e cards per una visione chiara e immediata dei dati.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section id="benefits" class="py-20">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Perché Scegliere CoreSuite</h2>
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center">
-                                <i class="fas fa-clock text-primary-600 dark:text-primary-400"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h3 class="text-xl font-semibold mb-2">Risparmio di Tempo</h3>
-                                <p class="text-gray-600 dark:text-gray-400">
-                                    Automazione intelligente che riduce drasticamente i tempi di gestione.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-secondary-100 dark:bg-secondary-900 flex items-center justify-center">
-                                <i class="fas fa-lock text-secondary-600 dark:text-secondary-400"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h3 class="text-xl font-semibold mb-2">Sicurezza Avanzata</h3>
-                                <p class="text-gray-600 dark:text-gray-400">
-                                    Protezione dei dati e conformità GDPR garantita.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center">
-                                <i class="fas fa-mobile-alt text-green-600 dark:text-green-400"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h3 class="text-xl font-semibold mb-2">Accessibilità Totale</h3>
-                                <p class="text-gray-600 dark:text-gray-400">
-                                    Accedi da qualsiasi dispositivo, ovunque tu sia.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-yellow-100 dark:bg-yellow-900 flex items-center justify-center">
-                                <i class="fas fa-laptop text-yellow-600 dark:text-yellow-400"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h3 class="text-xl font-semibold mb-2">Interfaccia Intuitiva</h3>
-                                <p class="text-gray-600 dark:text-gray-400">
-                                    Design moderno e user-friendly per un'esperienza ottimale.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Come funziona -->
+    <section id="how" class="py-20 bg-gradient-to-br from-blue-50 to-white">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-800 mb-12">Come funziona</h2>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="p-6 rounded-lg shadow bg-white animate-fade-in-up">
+                    <div class="text-4xl mb-4">🔑</div>
+                    <h3 class="font-semibold text-lg mb-2">Accedi</h3>
+                    <p class="text-gray-600">Effettua il login in modo sicuro e veloce.</p>
                 </div>
-                <div class="animate-float">
-                    <img src="/assets/images/advantages-illustration.svg" alt="CoreSuite Vantaggi" class="w-full">
+                <div class="p-6 rounded-lg shadow bg-white animate-fade-in-up delay-100">
+                    <div class="text-4xl mb-4">📑</div>
+                    <h3 class="font-semibold text-lg mb-2">Gestisci i contratti</h3>
+                    <p class="text-gray-600">Aggiungi, modifica e monitora tutti i tuoi contratti.</p>
+                </div>
+                <div class="p-6 rounded-lg shadow bg-white animate-fade-in-up delay-200">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h3 class="font-semibold text-lg mb-2">Analizza i dati</h3>
+                    <p class="text-gray-600">Visualizza statistiche e report dettagliati.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <img src="/assets/images/logo-white.png" alt="CoreSuite Logo" class="h-10 mb-4">
-                    <p class="text-gray-400">
-                        La soluzione moderna per la gestione dei contratti.
-                    </p>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Collegamenti</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#features" class="text-gray-400 hover:text-white transition-colors">Funzionalità</a></li>
-                        <li><a href="#providers" class="text-gray-400 hover:text-white transition-colors">Gestori</a></li>
-                        <li><a href="#benefits" class="text-gray-400 hover:text-white transition-colors">Vantaggi</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Legale</h4>
-                    <ul class="space-y-2">
-                        <li><a href="/privacy-policy.php" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
-                        <li><a href="/termini-condizioni.php" class="text-gray-400 hover:text-white transition-colors">Termini e Condizioni</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Contatti</h4>
-                    <ul class="space-y-2">
-                        <li><a href="/supporto.php" class="text-gray-400 hover:text-white transition-colors">Supporto</a></li>
-                        <li class="flex space-x-4 mt-4">
-                            <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+    <footer class="bg-blue-900 text-white py-10 mt-10">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-6 md:mb-0">
+                <img src="/logo-coresuite.png" alt="Coresuite Logo" class="h-8 inline-block mr-2">
+                <span class="font-bold text-lg">Coresuite</span>
             </div>
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-                <p>&copy; <?php echo date('Y'); ?> CoreSuite. Tutti i diritti riservati.</p>
+            <ul class="flex space-x-6 mb-6 md:mb-0">
+                <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+                <li><a href="#" class="hover:underline">Termini di utilizzo</a></li>
+                <li><a href="#" class="hover:underline">Supporto</a></li>
+            </ul>
+            <div class="flex space-x-4">
+                <a href="#" aria-label="LinkedIn" class="hover:text-orange-400"><svg fill="currentColor" viewBox="0 0 24 24" class="h-6 w-6"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 10.28h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39v4.58h-3v-9h2.89v1.23h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v4.72z"/></svg></a>
+                <a href="#" aria-label="Facebook" class="hover:text-orange-400"><svg fill="currentColor" viewBox="0 0 24 24" class="h-6 w-6"><path d="M22.675 0h-21.35c-.733 0-1.325.592-1.325 1.326v21.348c0 .733.592 1.326 1.325 1.326h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.312h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.326v-21.349c0-.734-.593-1.326-1.326-1.326z"/></svg></a>
+                <a href="#" aria-label="Twitter" class="hover:text-orange-400"><svg fill="currentColor" viewBox="0 0 24 24" class="h-6 w-6"><path d="M24 4.557a9.93 9.93 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724c-.951.564-2.005.974-3.127 1.195a4.92 4.92 0 0 0-8.384 4.482c-4.086-.205-7.713-2.164-10.141-5.144a4.822 4.822 0 0 0-.666 2.475c0 1.708.87 3.216 2.188 4.099a4.904 4.904 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.936 4.936 0 0 1-2.224.084c.627 1.956 2.444 3.377 4.6 3.417a9.867 9.867 0 0 1-6.102 2.104c-.396 0-.787-.023-1.175-.069a13.945 13.945 0 0 0 7.548 2.212c9.057 0 14.009-7.513 14.009-14.009 0-.213-.005-.425-.014-.636a10.012 10.012 0 0 0 2.457-2.548z"/></svg></a>
             </div>
         </div>
-    </footer>    <!-- Scripts -->
-    <script src="/assets/js/theme.js"></script>
-    <script src="/assets/js/animations.js"></script>
+        <div class="text-center mt-6 text-gray-300 text-sm">© 2025 Coresuite. Tutti i diritti riservati.</div>
+    </footer>
+
+    <!-- Interattività JS -->
+    <script>
+    // Navbar scroll
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+    // Animazioni fade-in
+    function revealOnScroll() {
+        const elements = document.querySelectorAll('.animate-fade-in, .animate-fade-in-up');
+        const windowHeight = window.innerHeight;
+        elements.forEach(el => {
+            const position = el.getBoundingClientRect().top;
+            if (position < windowHeight - 50) {
+                el.classList.add('opacity-100', 'translate-y-0');
+            }
+        });
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+    </script>
+    <style>
+      .animate-fade-in { opacity: 0; transition: opacity 1s; }
+      .animate-fade-in.opacity-100 { opacity: 1; }
+      .animate-fade-in-up { opacity: 0; transform: translateY(40px); transition: opacity 1s, transform 1s; }
+      .animate-fade-in-up.opacity-100, .animate-fade-in-up.translate-y-0 { opacity: 1; transform: translateY(0); }
+    </style>
 </body>
 </html>

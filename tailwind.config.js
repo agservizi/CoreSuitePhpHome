@@ -1,83 +1,37 @@
-/** @type {import('tailwindcss').Config} */
-const colors = require('tailwindcss/colors');
-
 module.exports = {
   content: [
-    "./index.php",
-    "./privacy-policy.php",
-    "./supporto.php",
-    "./termini-condizioni.php",
-    "./includes/**/*.php",
-    "./assets/js/**/*.js"
+    "./*.php",
+    "./src/**/*.php",
+    "./components/**/*.php"
   ],
-  darkMode: 'class',
-  darkMode: 'class',
   theme: {
     extend: {
       colors: {
         primary: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
+          DEFAULT: '#2563eb', // blu principale
+          light: '#3b82f6',
+          dark: '#1e40af',
         },
-        secondary: {
-          50: '#f5f3ff',
-          100: '#ede9fe',
-          200: '#ddd6fe',
-          300: '#c4b5fd',
-          400: '#a78bfa',
-          500: '#8b5cf6',
-          600: '#7c3aed',
-          700: '#6d28d9',
-          800: '#5b21b6',
-          900: '#4c1d95',
+        accent: {
+          DEFAULT: '#f97316', // arancione
+          light: '#fdba74',
+          dark: '#c2410c',
+        },
+        gray: {
+          50: '#f9fafb',
+          100: '#f3f4f6',
+          200: '#e5e7eb',
+          300: '#d1d5db',
+          400: '#9ca3af',
+          500: '#6b7280',
+          600: '#4b5563',
+          700: '#374151',
+          800: '#1f2937',
+          900: '#111827',
         },
       },
       fontFamily: {
-        'sans': ['Source Sans Pro', 'ui-sans-serif', 'system-ui'],
-      },
-      animation: {
-        'gradient': 'gradient 8s ease infinite',
-        'float': 'float 6s ease-in-out infinite',
-        'slide-up': 'slide-up 0.5s ease-out',
-      },
-      keyframes: {
-        gradient: {
-          '0%, 100%': {
-            'background-position': '0% 50%',
-          },
-          '50%': {
-            'background-position': '100% 50%',
-          },
-        },
-        float: {
-          '0%, 100%': {
-            transform: 'translateY(0)',
-          },
-          '50%': {
-            transform: 'translateY(-20px)',
-          },
-        },
-        'slide-up': {
-          '0%': {
-            transform: 'translateY(100%)',
-            opacity: '0',
-          },
-          '100%': {
-            transform: 'translateY(0)',
-            opacity: '1',
-          },
-        },
-      },
-      backgroundSize: {
-        '200%': '200% auto',
+        sans: ['Inter', 'Roboto', 'sans-serif'],
       },
     },
   },
